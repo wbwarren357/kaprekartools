@@ -13,16 +13,16 @@ from sys import *
 #        return diffInt
 
 
-def myDiffDigitsBigLtl(digitStr):
+def myDiffDigitsBigLtl(myDigitStr):
     """Calculate difference between the largest and the
     smallest numbers that can be formed from the given 
     string of digits.
 
     Args:
-        digitStr (str): String of digits in any order
+        myDigitStr (str): String of digits in any order
 
     Raises:
-        TypeError: digitStr is not a string of digits only
+        TypeError: myDigitStr is not a string of digits only
 
     Returns:
         int: the value of the biggest and littlest integers that can be formed
@@ -30,12 +30,12 @@ def myDiffDigitsBigLtl(digitStr):
     """
 
     # check if string is all digits
-    if not(digitStr.isdecimal()):
+    if not(myDigitStr.isdecimal()):
         raise TypeError("digitStr is not all decimals")
 
     # create sorted versions of the digits string
-    myBigLtlSortStr = ''.join(sorted(digitStr))
-    myLtlBigSortStr = ''.join(sorted(digitStr, reverse=True))
+    myBigLtlSortStr = ''.join(sorted(myDigitStr))
+    myLtlBigSortStr = ''.join(sorted(myDigitStr, reverse=True))
 
     # call helpers to compute big and ltl
     myBigValue = myDiffDigitsBigLtlHlpr(myBigLtlSortStr)
@@ -44,4 +44,44 @@ def myDiffDigitsBigLtl(digitStr):
     return (myBigValue - myLtlValue)
 
 
-print(mkRngSpc(0, 5))
+# ###############################################
+# Helper function
+
+
+def myDiffDigitsBigLtlHlpr(myDigitStr):
+    """Calculate difference between the largest and the
+    smallest numbers that can be formed from the given 
+    string of digits.
+
+    Args:
+        myDigitStr (str): String of digits in any order
+
+    Raises:
+        TypeError: myDigitStr is not a string of digits only
+
+    Returns:
+        int: the value of the biggest and littlest integers that can be formed
+        by using all of the digits in the string once
+    """
+
+    # check if string is all digits
+    if not(myDigitStr.isdecimal()):
+        raise TypeError("digitStr is not all decimals")
+
+    # create sorted versions of the digits string
+    myBigLtlSortStr = ''.join(sorted(myDigitStr))
+    myLtlBigSortStr = ''.join(sorted(myDigitStr, reverse=True))
+
+    # call helpers to compute big and ltl
+    myBigValue = myDiffDigitsBigLtlHlpr(myBigLtlSortStr)
+    myLtlValue = myDiffDigitsBigLtlHlpr(myLtlBigSortStr)
+
+    return (myBigValue - myLtlValue)
+
+
+print(myDiffDigitsBigLtl("0"))
+print(myDiffDigitsBigLtl("19"))
+print(myDiffDigitsBigLtl("828"))
+print(myDiffDigitsBigLtl("6174"))
+print(myDiffDigitsBigLtl("07824"))
+print(myDiffDigitsBigLtl("777777"))
