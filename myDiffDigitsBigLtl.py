@@ -28,13 +28,20 @@ def myDiffDigitsBigLtl(digitsStr):
         int: the value of the biggest and littlest integers that can be formed
         by using all of the digits in the string once
     """
+
+    # check if string is all digits
     if not(type(strtInt) is int):
         raise TypeError("strtInt not integer")
-    if not(type(lnInt) is int):
-        raise TypeError("lnInt not integer")
-    if lnInt < 0:
-        raise ValueError("lnInt not >= 0")
-    return {"strt": strtInt, "ln": lnInt}
+
+    # create sorted versions of the digits string
+    myBigLtlSortStr =
+    myLtlBigSortStr =
+
+    # call helpers to compute big and ltl
+    myBigValue = myDiffDigitsBigLtlHlpr(myBigLtlSortStr)
+    myLtlValue = myDiffDigitsBigLtlHlpr(myLtlBigSortStr)
+
+    return (myBigValue - myLtlValue)
 
 
 print(mkRngSpc(0, 5))
