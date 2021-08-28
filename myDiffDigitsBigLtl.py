@@ -13,7 +13,7 @@ from sys import *
 #        return diffInt
 
 
-def myDiffDigitsBigLtl(digitsStr):
+def myDiffDigitsBigLtl(digitStr):
     """Calculate difference between the largest and the
     smallest numbers that can be formed from the given 
     string of digits.
@@ -30,12 +30,12 @@ def myDiffDigitsBigLtl(digitsStr):
     """
 
     # check if string is all digits
-    if not(type(strtInt) is int):
-        raise TypeError("strtInt not integer")
+    if not(digitStr.isdecimal()):
+        raise TypeError("digitStr is not all decimals")
 
     # create sorted versions of the digits string
-    myBigLtlSortStr =
-    myLtlBigSortStr =
+    myBigLtlSortStr = ''.join(sorted(digitStr))
+    myLtlBigSortStr = ''.join(sorted(digitStr, reverse=True))
 
     # call helpers to compute big and ltl
     myBigValue = myDiffDigitsBigLtlHlpr(myBigLtlSortStr)
