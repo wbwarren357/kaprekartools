@@ -34,8 +34,8 @@ def myDiffDigitsBigLtl(myDigitStr):
         raise TypeError("digitStr is not all decimals")
 
     # create sorted versions of the digits string
-    myBigLtlSortStr = ''.join(sorted(myDigitStr))
-    myLtlBigSortStr = ''.join(sorted(myDigitStr, reverse=True))
+    myBigLtlSortStr = ''.join(sorted(myDigitStr, reverse=True))
+    myLtlBigSortStr = ''.join(sorted(myDigitStr))
 
     # call helpers to compute big and ltl
     myBigValue = int(myBigLtlSortStr)
@@ -44,9 +44,15 @@ def myDiffDigitsBigLtl(myDigitStr):
     return (myBigValue - myLtlValue)
 
 
-print(myDiffDigitsBigLtl("0"))
-print(myDiffDigitsBigLtl("19"))
-print(myDiffDigitsBigLtl("828"))
-print(myDiffDigitsBigLtl("6174"))
-print(myDiffDigitsBigLtl("07824"))
-print(myDiffDigitsBigLtl("777777"))
+myTest = "0"
+print("diff of " + myTest + " = " + str(myDiffDigitsBigLtl(myTest)))
+myTest = "12"
+print("diff of " + myTest + " = " + str(myDiffDigitsBigLtl(myTest)))
+myTest = "312"
+print("diff of " + myTest + " = " + str(myDiffDigitsBigLtl(myTest)))
+myTest = "4716"
+print("diff of " + myTest + " = " + str(myDiffDigitsBigLtl(myTest)))
+myTest = "09988"
+print("diff of " + myTest + " = " + str(myDiffDigitsBigLtl(myTest)))
+myTest = "777711"
+print("diff of " + myTest + " = " + str(myDiffDigitsBigLtl(myTest)))
