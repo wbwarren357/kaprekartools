@@ -6,8 +6,13 @@ from sys import *
 
 
 # ###############################################
-# Do N digit diffs
-# 1.  myDoNDigitDiffs = myDoNDigitDiffs(myNumDigits, myDigitStr, myNTimes)
+# Find DiffDigit Stoppers
+# 1.  myFindDiffDigitStoppers = myFindDiffDigitStoppers(myStartInt, myEndInt, myNumDigits, myNTimes)
+#       if myStartInt >= myEndInt
+#       if myStartInt or myEndInt not positive integers
+#       if myNumDigits not an integer > 1
+#       if myNTimes not an integer > 0
+
 #        if myNumDigits not int and < 1 then error
 #        if myDigitStr empty, then error
 #        if myDigitStr not all digits then error
