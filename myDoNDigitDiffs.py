@@ -12,8 +12,21 @@ from sys import *
 #        if myDigitStr empty, then error
 #        if myDigitStr not all digits then error
 #        if myNTimes not int not > 0 then error
-#        if result(N+1) == result (N), stops immediately
+#        if result(N+1) == result(N), stops immediately
 #        return(result of doing myDiffDigitsBigLtl on arguments N times, "found end", number of diffDigit done)
+
+def myDoNDigitDiffs(myNumDigits, myDigitStr, myNTimes):
+    # check inputs
+
+    # pad input string if needed
+    myPaddedDigitsString = (myDigitString + (*"0" * myNumDigits))[:myNumDigits]
+
+    # call helper and return results
+    myFoundStopper, nyNumDiffDigitsDone, myLastValueInt = myDoNDigitDiffsHlpr(
+        myNumDigits, myPaddedDigitStr, myNTimesDone, myNTimesLeft)
+
+    # return results
+    return(myFoundStopper, myNumDiffDigitsDone, myLastValueInt)
 
 
 def myDiffDigitsBigLtl(myDigitStr):
